@@ -13,7 +13,7 @@
 {"id":4,"name_game":"扶桑","name_zh":"扶桑","ship_type_id":6,"_id":"8Sh8jh40V9c1dwKp"}
 {"id":5,"name_game":"明石","name_zh":"明石","ship_type_id":16,"_id":"8xQPYsq6jHfdAjBa"}
 {"name_game":"夕雲","name_zh":"夕云","ship_type_id":1,"id":22,"_id":"AcZKZJTEy3ySYL7p"}
-{"name_game":"Maestrale","name_zh":"Maestrale","ship_type_id":1,"id":78,"_id":"AtJsZGIYiyfK2m47"}
+{"name_game":"Maestrale","name_zh":"西北风","ship_type_id":1,"id":78,"_id":"AtJsZGIYiyfK2m47"}
 {"name_game":"三式潜航輸送艇","name_zh":"三式潜航运输艇","ship_type_id":13,"id":64,"_id":"BS1phNGWHoLWnP2X"}
 {"name_game":"海大VI","name_zh":"海大VI","ship_type_id":13,"id":58,"_id":"CHm2NzKneYLoNM0M"}
 {"name_game":"白露","name_zh":"白露","ship_type_id":1,"id":19,"_id":"D8Fb8K8IZYvwA4nk"}
@@ -39,6 +39,7 @@
 {"name_game":"巡潜乙（改二）","name_zh":"巡潜乙（改二）","ship_type_id":13,"id":61,"_id":"YZ70kvfsnx9rAx3z"}
 {"name_game":"Admiral Hipper","name_zh":"希佩尔海军上将","ship_type_id":4,"id":57,"_id":"ZhPM1Msam9Zr1lRh"}
 {"name_game":"球磨","name_zh":"球磨","ship_type_id":3,"id":54,"_id":"aqjF6P9FYhNyZMn9"}
+{"name_game":"Graf Zeppelin","name_zh":"齐柏林伯爵","ship_type_id":10,"id":80,"_id":"bNn1ADmTUuacGgdG"}
 {"id":8,"name_game":"千歳","name_zh":"千岁","ship_type_id":12,"_id":"cQQU4HKdtsPXF1C6"}
 {"id":9,"name_game":"金剛","name_zh":"金刚","ship_type_id":7,"_id":"dLZ8YVNL7vozx2TK"}
 {"name_game":"UボートIXC","name_zh":"UIX C","ship_type_id":13,"id":62,"_id":"dUnjH1tY6sJU8n8f"}

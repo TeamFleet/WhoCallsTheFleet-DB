@@ -1,0 +1,17 @@
+{
+    "name": "whocallsthefleet-database",
+
+    "version": "1.0.0",
+
+    "description": "NeDB database for Who Calls the Fleet (https://fleet.moe)",
+    "author": {
+        "name": "Diablohu",
+        "email": "diablohudream@gmail.com",
+        "url": "http://diablohu.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Diablohu/WhoCallsTheFleet-DB"
+    }
+}

@@ -13,5 +13,20 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/Diablohu/WhoCallsTheFleet-DB"
+    },
+
+    "scripts": {
+        "get:api:start2": "node ./parser/get_api_start2.js",
+        "get:pics:ships": "node ./parser/get_pics_ships.js"
+    },
+
+    "devDependencies": {
+        "kckit": "^1.1.2",
+        "fs-extra": "^3.0.1",
+        "nedb-promise": "^2.0.1",
+        "request": "^2.81.0",
+        "jpexs-flash-decompiler": "^0.0.3",
+        "json-pretty": "^0.0.1",
+        "yargs": "^8.0.1"
     }
 }

@@ -7,6 +7,8 @@ const jpexs = require('jpexs-flash-decompiler')
 
 const dirFetchedData = path.join(process.cwd(), 'fetched_data')
 
+const { enemyIdStartFrom } = require('./vars.js')
+
 // http://203.104.209.23/kcs/resources/swf/ships/nehcyhpiviue.swf?VERSION=7
 
 /*
@@ -217,7 +219,7 @@ const run = async (proxy) => {
      */
 
     for (let i in rawShips) {
-        if (typeof rawShips[i].api_name !== 'なし'){
+        if (typeof rawShips[i].api_name !== 'なし') {
             ships[rawShips[i].api_id] = rawShips[i]
             map[rawShips[i].api_id] = null
         }
@@ -248,9 +250,10 @@ const run = async (proxy) => {
     console.log('  ├── Data parsed. Start fetching SWF files...')
     for (let id of needUpdate) {
         await new Promise(async (resolve, reject) => {
-            console.log(`  │       Fetching ${map[id]}.swf for ship [${id}] ${ships[id].api_name}`)
+            const name = ships[id].api_name + (id >= enemyIdStartFrom && ships[id].api_yomi !== '-' ? (ships[id].api_yomi || '') : '')
+            const pathFile = path.join(dirPicsShipsRaw, `[${id}] ${name}.swf`)
 
-            const pathFile = path.join(dirPicsShipsRaw, `[${id}] ${ships[id].api_name}.swf`)
+            console.log(`  │       Fetching ${map[id]}.swf for ship [${id}] ${name}`)
 
             await getFile(
                 url.parse(`http://203.104.209.23/kcs/resources/swf/ships/${map[id]}.swf?VERSION=${picsVersions[id]}`),

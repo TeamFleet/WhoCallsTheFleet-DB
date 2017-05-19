@@ -54,3 +54,4 @@ dist-web
 /_.cmd
 .eslintrc.full
 /fetched_data
+/batch

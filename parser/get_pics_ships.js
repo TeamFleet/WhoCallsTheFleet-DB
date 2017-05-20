@@ -7,7 +7,8 @@ const jpexs = require('jpexs-flash-decompiler')
 
 const dirFetchedData = path.join(process.cwd(), 'fetched_data')
 
-const { enemyIdStartFrom } = require('./vars.js')
+const { enemyIdStartFrom } = require('./libs/vars.js')
+const getFile = require('./libs/get-file.js')
 
 // http://203.104.209.23/kcs/resources/swf/ships/nehcyhpiviue.swf?VERSION=7
 
@@ -19,29 +20,6 @@ fetched_data
         +-- raw
         `-- extract
 */
-
-const getFile = async (url, topath, proxy) => {
-    let statusCode
-    return await new Promise((resolve, reject) => {
-        request({
-            'uri': url,
-            'method': 'GET',
-            'proxy': proxy
-        }).on('error', function (err) {
-            reject(new Error(err))
-        }).on('response', function (response) {
-            statusCode = response.statusCode
-        }).pipe(
-            fs.createWriteStream(topath)
-                .on('finish', function () {
-                    resolve()
-                    // if (statusCode != 200 || data['api_name'] == 'なし') {
-                    //     skipped = true
-                    // }
-                })
-            )
-    })
-}
 
 const run = async (proxy) => {
     const dirPicsShips = path.join(dirFetchedData, 'pics', 'ships')

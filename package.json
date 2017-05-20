@@ -17,7 +17,8 @@
 
     "scripts": {
         "get:api:start2": "node ./parser/get_api_start2.js",
-        "get:pics:ships": "node ./parser/get_pics_ships.js"
+        "get:pics:ships": "node ./parser/get_pics_ships.js",
+        "get:pics:equipments": "node ./parser/get_pics_equipments.js"
     },
 
     "devDependencies": {

@@ -28,6 +28,7 @@
         "request": "^2.81.0",
         "jpexs-flash-decompiler": "^0.0.3",
         "json-pretty": "^0.0.1",
-        "yargs": "^8.0.1"
+        "yargs": "^8.0.1",
+        "eslint": "^3.19.0"
     }
 }

@@ -15,6 +15,8 @@ module.exports = async (url, topath, proxy) => {
         }).pipe(
             fs.createWriteStream(topath)
                 .on('finish', function () {
+                    if (statusCode != 200)
+                        fs.unlinkSync(topath)
                     resolve()
                     // if (statusCode != 200 || data['api_name'] == 'なし') {
                     //     skipped = true

@@ -209,11 +209,12 @@ const run = async (proxy) => {
             map[id] = o.api_filename
 
             let curPicVersion
-            if (Array.isArray(o.api_version))
-                curPicVersion = o.api_version
-                    .map(value => parseInt(value))
-                    .reduce((accumulator, currentValue) => accumulator + currentValue)
-            else
+            if (Array.isArray(o.api_version)) {
+                // curPicVersion = o.api_version
+                //     .map(value => parseInt(value))
+                //     .reduce((accumulator, currentValue) => accumulator + currentValue)
+                curPicVersion = parseInt(o.api_version[0])
+            } else
                 curPicVersion = parseInt(o.api_version)
 
             if (curPicVersion !== picsVersions[id])

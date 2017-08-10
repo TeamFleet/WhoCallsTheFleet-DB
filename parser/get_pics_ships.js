@@ -232,6 +232,8 @@ const run = async (proxy) => {
             const name = ships[id].api_name + (id >= enemyIdStartFrom && ships[id].api_yomi !== '-' ? (ships[id].api_yomi || '') : '')
             const pathFile = path.join(dirPicsShipsRaw, `[${id}] ${name}.swf`)
 
+            let isDownloadSuccess = true
+
             console.log(`  │       Fetching ${map[id]}.swf for ship [${id}] ${name}`)
 
             await getFile(
@@ -239,54 +241,62 @@ const run = async (proxy) => {
                 pathFile,
                 proxy
             )
-                .catch(err => console.log("  │       Fetched error:", err))
-            console.log(`  │           Fetched.`)
+                .catch(err => {
+                    isDownloadSuccess = false
+                    console.log("  │       Fetched error: ", err)
+                })
 
-            console.log(`  │           Decompiling swf for ship #${id}...`)
-            const dirPicsShipsExtractShip = path.join(dirPicsShipsExtract, '' + id)
-            fs.ensureDirSync(dirPicsShipsExtractShip)
-            await new Promise(async (resolve, reject) => {
-                jpexs.export({
-                    file: pathFile,
-                    output: dirPicsShipsExtractShip,
-                    items: [jpexs.ITEM.IMAGE],
-                    format: [jpexs.FORMAT.IMAGE.PNG]
-                }, function (err) {
-                    if (err) {
-                        console.log('Error: ', err.message)
-                        resolve()
-                        // reject(err)
-                    } else {
-                        resolve()
-                    }
-                });
-            })
-            console.log(`  │           Decompiled -> /fetched_data/pics/ships/extract/${id}`)
+            if (!isDownloadSuccess) {
+                console.log(`  │           Go next...`)
+            } else {
+                console.log(`  │           Fetched.`)
 
-            fs.readdirSync(dirPicsShipsExtractShip).forEach(file => {
-                const parsed = path.parse(file)
-                const new_name = '_' + Math.floor(parseInt(parsed['name']) / 2) + parsed['ext'].toLowerCase()
-                fs.renameSync(
-                    path.join(dirPicsShipsExtractShip, file),
-                    path.join(dirPicsShipsExtractShip, new_name)
+                console.log(`  │           Decompiling swf for ship #${id}...`)
+                const dirPicsShipsExtractShip = path.join(dirPicsShipsExtract, '' + id)
+                fs.ensureDirSync(dirPicsShipsExtractShip)
+                await new Promise(async (resolve, reject) => {
+                    jpexs.export({
+                        file: pathFile,
+                        output: dirPicsShipsExtractShip,
+                        items: [jpexs.ITEM.IMAGE],
+                        format: [jpexs.FORMAT.IMAGE.PNG]
+                    }, function (err) {
+                        if (err) {
+                            console.log('Error: ', err.message)
+                            // resolve()
+                            reject(err)
+                        } else {
+                            resolve()
+                        }
+                    });
+                })
+                console.log(`  │           Decompiled -> /fetched_data/pics/ships/extract/${id}`)
+
+                fs.readdirSync(dirPicsShipsExtractShip).forEach(file => {
+                    const parsed = path.parse(file)
+                    const new_name = '_' + Math.floor(parseInt(parsed['name']) / 2) + parsed['ext'].toLowerCase()
+                    fs.renameSync(
+                        path.join(dirPicsShipsExtractShip, file),
+                        path.join(dirPicsShipsExtractShip, new_name)
+                    )
+                })
+                fs.readdirSync(dirPicsShipsExtractShip).forEach(file => {
+                    const parsed = path.parse(file)
+                    const new_name = parsed['name'].substr(1) + parsed['ext'].toLowerCase()
+                    fs.renameSync(
+                        path.join(dirPicsShipsExtractShip, file),
+                        path.join(dirPicsShipsExtractShip, new_name)
+                    )
+                })
+                console.log(`  │           Renamed.`)
+
+                picsVersions[id] = picsVersionsNew[id]
+                fs.writeFileSync(
+                    filePicsVersions,
+                    jsonPretty(picsVersions)
                 )
-            })
-            fs.readdirSync(dirPicsShipsExtractShip).forEach(file => {
-                const parsed = path.parse(file)
-                const new_name = parsed['name'].substr(1) + parsed['ext'].toLowerCase()
-                fs.renameSync(
-                    path.join(dirPicsShipsExtractShip, file),
-                    path.join(dirPicsShipsExtractShip, new_name)
-                )
-            })
-            console.log(`  │           Renamed.`)
-
-            picsVersions[id] = picsVersionsNew[id]
-            fs.writeFileSync(
-                filePicsVersions,
-                jsonPretty(picsVersions)
-            )
-            console.log(`  │           Updated pic version for ship #${id} -> /fetched_data/pics/ships/versions.json`)
+                console.log(`  │           Updated pic version for ship #${id} -> /fetched_data/pics/ships/versions.json`)
+            }
 
             resolve()
         })

@@ -254,7 +254,8 @@ const run = async (proxy) => {
                 }, function (err) {
                     if (err) {
                         console.log('Error: ', err.message)
-                        reject(err)
+                        resolve()
+                        // reject(err)
                     } else {
                         resolve()
                     }

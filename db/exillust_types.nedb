@@ -34,7 +34,7 @@
 {"name":{"zh_cn":"雏祭","ja_jp":"桃の節句 / 雛祭り","en_us":"Hinamatsuri"},"time":{"zh_cn":"2月底","en_us":"Late February","ja_jp":"2月下旬"},"id":4,"sort":5,"_id":"bb0s4wd7K9MerdG9"}
 {"name":{"ja_jp":"親子丼","zh_cn":"滑蛋鸡肉饭","en_us":"Oyakodon"},"id":21,"sort":39,"_id":"dUKtcZ80fbmVuGwh"}
 {"name":{"ja_jp":"牛丼","zh_cn":"牛肉饭","en_us":"Gyūdon"},"id":20,"sort":37,"_id":"fDiqqjrXvbNyK1RY"}
-{"name":{"ja_jp":"コラボ：三越","zh_cn":"联动：三越","en_us":"Collab: Mitsukoshi"},"id":25,"sort":51,"_id":"fjB8kfsg1UdPAe88","revision":3}
+{"name":{"ja_jp":"コラボ：三越","zh_cn":"联动：三越","en_us":"Collab: Mitsukoshi"},"id":25,"sort":51,"_id":"fjB8kfsg1UdPAe88","revision":2}
 {"name":{"zh_cn":"新年","ja_jp":"新春","en_us":"New Year"},"id":1,"sort":1,"_id":"h4W4t1pX1cHTCHVM","time":{"ja_jp":"1月初旬","zh_cn":"1月初","en_us":"Early January"}}
 {"name":{"ja_jp":"お出掛け","en_us":"お出掛け","zh_cn":"外出"},"id":42,"sort":44,"_id":"hKRqlwoDPrhmHSvE"}
 {"name":{"ja_jp":"里帰り水着","zh_cn":"回家泳装","en_us":"Special Swimsuit"},"time":{"ja_jp":"夏","zh_cn":"夏季","en_us":"Summer"},"id":29,"sort":11,"_id":"hntC1taJeYHoFvfq"}

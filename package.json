@@ -1,7 +1,7 @@
 {
     "name": "whocallsthefleet-database",
 
-    "version": "20200406.0.1",
+    "version": "20200419.0.0",
 
     "description": "NeDB database for Who Calls the Fleet (https://fleet.moe)",
     "author": {

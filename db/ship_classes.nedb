@@ -108,7 +108,7 @@
 {"ship_type_id":25,"id":72,"_id":"jfpjyPAIEH0Spe0F","name":{"en_us":"","ja_jp":"タカオ","zh_cn":"高雄"}}
 {"ship_type_id":4,"id":44,"_id":"jw8eyIBRveuECrsi","speed_rule":"high-1","name":{"en_us":"Tone","ja_jp":"利根","zh_cn":"利根"}}
 {"name":{"ja_jp":"Atlanta","zh_cn":"亚特兰大"},"ship_type_id":28,"id":128,"_id":"kLDJJhxCldypyxcB","navy":"usn"}
-{"name":{"ja_jp":"鵜来","zh_cn":"鸠来","en_us":"Ukuru"},"ship_type_id":31,"id":155,"_id":"kLenhToDwfrT0FBK"}
+{"name":{"ja_jp":"鵜来","zh_cn":"鹈来","en_us":"Ukuru"},"ship_type_id":31,"id":155,"_id":"kLenhToDwfrT0FBK"}
 {"ship_type_id":9,"id":97,"_id":"kRCQrUu1SJ0dK9S3","name":{"en_us":"Taiyou","ja_jp":"大鷹","zh_cn":"大鹰"}}
 {"id":11,"ship_type_id":8,"_id":"kSJwuMPND49q30PL","speed_rule":"low-2","name":{"en_us":"Fusou","ja_jp":"扶桑","zh_cn":"扶桑"}}
 {"name":{"ja_jp":"Illustrious","zh_cn":"光辉","en_us":"Illustrious"},"ship_type_id":11,"id":149,"_id":"l9JvcREliiixLQzm","navy":"rn"}
